@@ -1,0 +1,10 @@
+[api-updater (non-obsolete-error-filter)] 11/1/2021 8:11:50 PM : Starting C:/Program Files/Unity/Hub/Editor/2020.3.20f1/Editor/Data/Tools/ScriptUpdater/APIUpdater.NonObsoleteApiUpdaterDetector.exe
+[api-updater (non-obsolete-error-filter)] 
+----------------------------------
+jit/startup time      : 199.6488ms
+moved types parse time: 116ms
+candidates parse time : 2ms
+C# parse time         : 480ms
+candidates check time : 86ms
+console write time    : 2ms
+
