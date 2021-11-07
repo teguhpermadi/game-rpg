@@ -6,6 +6,7 @@ TagManager:
   tags:
   - CinemachineTarget
   - NPC
+  - Perlengkapan
   layers:
   - Default
   - TransparentFX

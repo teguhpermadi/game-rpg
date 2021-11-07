@@ -24,6 +24,11 @@ namespace PixelCrushers
         [SerializeField]
         private string m_spawnpointNameInDestinationScene;
 
+        [SerializeField]
+        private UnityEngine.Events.UnityEvent m_onUsePortal = new UnityEngine.Events.UnityEvent();
+
+        private bool m_isLoadingScene = false;
+
         public string requiredTag
         {
             get { return m_requiredTag; }
@@ -42,8 +47,19 @@ namespace PixelCrushers
             set { m_spawnpointNameInDestinationScene = value; }
         }
 
+        public bool isLoadingScene
+        {
+            get { return m_isLoadingScene; }
+            set { m_isLoadingScene = value; }
+        }
+
+        public UnityEngine.Events.UnityEvent onUsePortal { get { return m_onUsePortal; } }
+
         public virtual void UsePortal()
         {
+            if (isLoadingScene) return;
+            isLoadingScene = true;
+            onUsePortal.Invoke();
             LoadScene();
         }
 

@@ -1,0 +1,424 @@
+fileFormatVersion: 2
+guid: bfc33a45e21962544b4d994718517335
+ModelImporter:
+  serializedVersion: 20200
+  internalIDToNameTable:
+  - first:
+      74: -88723805440604879
+    second: Cylinder|CylinderAction
+  - first:
+      74: 1820708520863030894
+    second: Cylinder|kipas.001Action
+  - first:
+      74: 7503028626199939163
+    second: Cylinder|kipas.002Action.001
+  - first:
+      74: 5806884302838140661
+    second: Cylinder|kipas.006Action
+  - first:
+      74: 5482960797928164304
+    second: Cylinder|kipas.007Action
+  - first:
+      74: 4574573068051314647
+    second: Cylinder|lampu.001Action
+  - first:
+      74: -1133940408256876327
+    second: Cylinder|mB.001Action.001
+  - first:
+      74: -1371513188719250215
+    second: mB.001|CylinderAction
+  - first:
+      74: -6929162214764455140
+    second: mB.001|kipas.001Action
+  - first:
+      74: -3631313841177580550
+    second: mB.001|kipas.002Action.001
+  - first:
+      74: 9058176936757600689
+    second: mB.001|kipas.006Action
+  - first:
+      74: 5780996869255485484
+    second: mB.001|kipas.007Action
+  - first:
+      74: 661628509813644852
+    second: mB.001|lampu.001Action
+  - first:
+      74: -6656327934815126207
+    second: mB.001|mB.001Action.001
+  - first:
+      74: -5597987429635432138
+    second: lampu.001|CylinderAction
+  - first:
+      74: 7182199512163779214
+    second: lampu.001|kipas.001Action
+  - first:
+      74: 5724975353768355418
+    second: lampu.001|kipas.002Action.001
+  - first:
+      74: 3695536171975631489
+    second: lampu.001|kipas.006Action
+  - first:
+      74: -8550880419289860828
+    second: lampu.001|kipas.007Action
+  - first:
+      74: 908798461050822861
+    second: lampu.001|lampu.001Action
+  - first:
+      74: 2825723812989521028
+    second: lampu.001|mB.001Action.001
+  - first:
+      74: 1290645139559991672
+    second: kipas.007|CylinderAction
+  - first:
+      74: 3938370143260017924
+    second: kipas.007|kipas.001Action
+  - first:
+      74: 3151476480597474725
+    second: kipas.007|kipas.002Action.001
+  - first:
+      74: -7591333608274782723
+    second: kipas.007|kipas.006Action
+  - first:
+      74: -8155212854416811648
+    second: kipas.007|kipas.007Action
+  - first:
+      74: 2508839653075248238
+    second: kipas.007|lampu.001Action
+  - first:
+      74: 8432062540917662189
+    second: kipas.007|mB.001Action.001
+  - first:
+      74: -145239461697136293
+    second: kipas.006|CylinderAction
+  - first:
+      74: -5850258309196074257
+    second: kipas.006|kipas.001Action
+  - first:
+      74: -1462501553225032517
+    second: kipas.006|kipas.002Action.001
+  - first:
+      74: 4781805129463661934
+    second: kipas.006|kipas.006Action
+  - first:
+      74: -1462524537508204305
+    second: kipas.006|kipas.007Action
+  - first:
+      74: -1550204958868060715
+    second: kipas.006|lampu.001Action
+  - first:
+      74: -3251714041830050209
+    second: kipas.006|mB.001Action.001
+  - first:
+      74: 8516842912112820562
+    second: kipas.002|CylinderAction
+  - first:
+      74: 6834460492727813865
+    second: kipas.002|kipas.001Action
+  - first:
+      74: -2578646564256934578
+    second: kipas.002|kipas.002Action.001
+  - first:
+      74: 8679798251086540130
+    second: kipas.002|kipas.006Action
+  - first:
+      74: 3647399552266244178
+    second: kipas.002|kipas.007Action
+  - first:
+      74: 3607817326524499076
+    second: kipas.002|lampu.001Action
+  - first:
+      74: -42400686309402355
+    second: kipas.002|mB.001Action.001
+  - first:
+      74: 6098876188260886702
+    second: kipas.001|CylinderAction
+  - first:
+      74: -858510905838717119
+    second: kipas.001|kipas.001Action
+  - first:
+      74: -8069584885055204677
+    second: kipas.001|kipas.002Action.001
+  - first:
+      74: 5174715468348893956
+    second: kipas.001|kipas.006Action
+  - first:
+      74: 7794568392814953564
+    second: kipas.001|kipas.007Action
+  - first:
+      74: 6029569609416354095
+    second: kipas.001|lampu.001Action
+  - first:
+      74: 3962625239408656675
+    second: kipas.001|mB.001Action.001
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 1
+    second: {fileID: 2100000, guid: 7311353dd44b0644886696c654c92b38, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 1.001
+    second: {fileID: 2100000, guid: 3fcac746ad84ef14b85ac0eeca07423d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 1.002
+    second: {fileID: 2100000, guid: a85f6c3aaeb72b842a78462b8b6f3731, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 2
+    second: {fileID: 2100000, guid: 6f547426167755d4c990b2712ae6d138, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BEsi
+    second: {fileID: 2100000, guid: b208a9f7d6470b94ba44cc3fec8f1d52, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: KACA2.001
+    second: {fileID: 2100000, guid: acb66c9d1d46da44ab5bb0c353f01c34, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.003
+    second: {fileID: 2100000, guid: cc29ad74c70e9d84b9db841a77e64520, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Putih
+    second: {fileID: 2100000, guid: a08e778d9456e704f81382f54a9c0810, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: backpanel
+    second: {fileID: 2100000, guid: 20ed65ffe4b5e9947a123a92e5fd3c90, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: blckshn
+    second: {fileID: 2100000, guid: bd49ec948ce46ca45bad76325739f979, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cable
+    second: {fileID: 2100000, guid: 8aecba4435cb29c4a8f03b4e69f6665c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: fiber
+    second: {fileID: 2100000, guid: 44f199c3cd23d934fb411ccbd8b0e40b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: glowijo
+    second: {fileID: 2100000, guid: a28622abb2bd90544b6f0e9a5ee5e1cd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: glowijo.001
+    second: {fileID: 2100000, guid: bb3508fea5a905c4fa904aba13d77222, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: grn
+    second: {fileID: 2100000, guid: 91c873ccd14884847a5680b174533387, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: gry
+    second: {fileID: 2100000, guid: faa0f1bd6219e34468055096c087de9d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: hdd
+    second: {fileID: 2100000, guid: 5350e9f7f78ccb449b96d530cb6210d7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ind
+    second: {fileID: 2100000, guid: 2c3ffff582f8e714a84310125beb795d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: kaca
+    second: {fileID: 2100000, guid: 05a7d792b28c0f843833fccd30e4d297, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: kaca1
+    second: {fileID: 2100000, guid: 6101da236c7938646a6bc2e17de9974e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: kacak2
+    second: {fileID: 2100000, guid: db9dd26922db97a40b13b321787bb6a6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: kuning
+    second: {fileID: 2100000, guid: 1f121aeba788fd64fa426d6e831f1158, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lampu
+    second: {fileID: 2100000, guid: 5f8f447ace0fbd34da05b222e2badeb6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: logologo
+    second: {fileID: 2100000, guid: 4a68b22f61cb5f744a9df5c93d25ec27, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mB
+    second: {fileID: 2100000, guid: 7b3c4b7165de6d9478f9ec11949443d5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: merah
+    second: {fileID: 2100000, guid: 2c5b69f2149e60443ad264733192896f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mrh
+    second: {fileID: 2100000, guid: 48b2c4ff291ba5643a95ab25f410f9ed, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: net
+    second: {fileID: 2100000, guid: d033d5e47ceb7b54ba59fb528ff309ea, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: on
+    second: {fileID: 2100000, guid: d809059288100164cb4ec50d785fbde0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: proc
+    second: {fileID: 2100000, guid: 1ebde4345fed9344d9d16f8ab234df21, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: psui
+    second: {fileID: 2100000, guid: ae3121219f4a75e46aeaced9953f987d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ram
+    second: {fileID: 2100000, guid: 0872d171245984348b6f766e24af4e76, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: rghblck
+    second: {fileID: 2100000, guid: 6a1fe80ceb381bd418afc0e5873371f1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: silver
+    second: {fileID: 2100000, guid: 4427a95e56dc7e34aa1d0c8b073f72c2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: test
+    second: {fileID: 2100000, guid: c19a596fc04b97f43be0788065de8294, type: 2}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

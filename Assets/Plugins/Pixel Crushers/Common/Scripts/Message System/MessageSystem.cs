@@ -17,6 +17,7 @@ namespace PixelCrushers
             public IMessageHandler listener;
             public string message;
             public string parameter;
+            public int frameAdded;
             public bool removed;
 
             public ListenerInfo() { }
@@ -26,6 +27,7 @@ namespace PixelCrushers
                 this.listener = listener;
                 this.message = message;
                 this.parameter = parameter;
+                this.frameAdded = Time.frameCount;
                 this.removed = false;
             }
 
@@ -34,6 +36,7 @@ namespace PixelCrushers
                 this.listener = listener;
                 this.message = message;
                 this.parameter = parameter;
+                this.frameAdded = Time.frameCount;
                 this.removed = false;
             }
 
@@ -58,6 +61,20 @@ namespace PixelCrushers
         private static bool s_debug = false;
 
         private static int s_sendMessageDepth = 0;
+
+#if UNITY_2019_3_OR_NEWER
+        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
+        static void InitStaticVariables()
+        {
+            s_listenerInfo = new List<ListenerInfo>();
+            s_listenerInfoPool = new Pool<ListenerInfo>();
+            s_sendersToLog = new HashSet<GameObject>();
+            s_listenersToLog = new HashSet<GameObject>();
+            s_sendInEditMode = false;
+            s_debug = false;
+            s_sendMessageDepth = 0;
+        }
+#endif
 
         /// <summary>
         /// Send messages even when not playing.
@@ -99,7 +116,7 @@ namespace PixelCrushers
             for (int i = 0; i < listenerInfo.Count; i++)
             {
                 var x = listenerInfo[i];
-                if (x.listener == listener && string.Equals(x.message, message) && (string.Equals(x.parameter, parameter) || string.IsNullOrEmpty(x.parameter)))
+                if (!x.removed && x.listener == listener && string.Equals(x.message, message) && (string.Equals(x.parameter, parameter) || string.IsNullOrEmpty(x.parameter)))
                 {
                     return true;
                 }
@@ -116,7 +133,19 @@ namespace PixelCrushers
         public static void AddListener(IMessageHandler listener, string message, string parameter)
         {
             if (debug) Debug.Log("MessageSystem.AddListener(listener=" + listener + ": " + message + "," + parameter + ")");
-            if (IsListenerRegistered(listener, message, parameter)) return;
+
+            // Check if listener is already registered:
+            for (int i = 0; i < listenerInfo.Count; i++)
+            {
+                var x = listenerInfo[i];
+                if (x.listener == listener && string.Equals(x.message, message) && (string.Equals(x.parameter, parameter) || string.IsNullOrEmpty(x.parameter)))
+                {
+                    x.removed = false;
+                    return;
+                }
+            }
+
+            // Otherwise add:
             var info = listenerInfoPool.Get();
             info.Assign(listener, message, parameter);
             listenerInfo.Add(info);
@@ -185,16 +214,14 @@ namespace PixelCrushers
 
         private static void RemoveMarkedListenerInfo()
         {
-            for (int i = 0; i < listenerInfo.Count; i++)
-            {
-                var x = listenerInfo[i];
-                if (x.removed)
-                {
-                    x.Clear();
-                    listenerInfoPool.Release(x);
-                }
-            }
+            var listenersToRemove = listenerInfo.FindAll(x => x.removed);
             listenerInfo.RemoveAll(x => x.removed);
+            for (int i = 0; i < listenersToRemove.Count; i++)
+            {
+                var listenerToRemove = listenersToRemove[i];
+                listenerToRemove.Clear();
+                listenerInfoPool.Release(listenerToRemove);
+            }
         }
 
         /// <summary>
@@ -307,7 +334,13 @@ namespace PixelCrushers
                 for (int i = 0; i < listenerInfo.Count; i++)
                 {
                     var x = listenerInfo[i];
-                    if (x.removed) continue;
+                    if (x == null || x.removed) continue;
+                    if (x.listener == null)
+                    {
+                        x.removed = true;
+                        continue;
+                    }
+                    if (x.frameAdded == Time.frameCount) continue;
                     if (string.Equals(x.message, message) && (string.Equals(x.parameter, parameter) || string.IsNullOrEmpty(x.parameter)))
                     {
                         try

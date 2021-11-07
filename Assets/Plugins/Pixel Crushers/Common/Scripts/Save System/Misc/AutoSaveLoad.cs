@@ -65,6 +65,7 @@ namespace PixelCrushers
         /// </summary>
         private void OnApplicationQuit()
         {
+            CheckSaveOnQuit();
         }
 #endif
 
@@ -72,7 +73,7 @@ namespace PixelCrushers
         {
             if (enabled && saveOnQuit && CanSaveInThisScene())
             {
-                SaveSystem.SaveToSlot(saveSlotNumber);
+                SaveSystem.SaveToSlotImmediate(saveSlotNumber);
             }
         }
 
@@ -84,7 +85,7 @@ namespace PixelCrushers
         {
             if (enabled && paused && saveOnPause && CanSaveInThisScene())
             {
-                SaveSystem.SaveToSlot(saveSlotNumber);
+                SaveSystem.SaveToSlotImmediate(saveSlotNumber);
             }
         }
 
@@ -96,7 +97,7 @@ namespace PixelCrushers
         {
             if (enabled && saveOnLoseFocus && focusStatus == false && CanSaveInThisScene())
             {
-                SaveSystem.SaveToSlot(saveSlotNumber);
+                SaveSystem.SaveToSlotImmediate(saveSlotNumber);
             }
         }
 

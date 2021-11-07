@@ -80,9 +80,25 @@ namespace PixelCrushers
         private SerializedObject m_serializedObject = null;
         private GUIStyle textAreaStyle = null;
         private bool isTextAreaStyleInitialized = false;
-        
+
         private const string EncodingTypeEditorPrefsKey = "PixelCrushers.EncodingType";
         private const string ToolbarSelectionPrefsKey = "PixelCrushers.TextTableEditor.Toolbar";
+        private const string SearchBarPrefsKey = "PixelCrushers.TextTableEditor.SearchBar";
+        private const double TimeBetweenUpdates = 10;
+
+        private bool m_needToUpdateSO;
+        private bool m_needToApplyBeforeUpdateSO;
+        private bool m_isPickingOtherTextTable;
+        private System.DateTime m_lastApply;
+
+        [System.Serializable]
+        public class SearchBarSettings
+        {
+            public bool open = false;
+            public string searchString = string.Empty;
+            public string replaceString = string.Empty;
+            public bool matchCase = false;
+        }
 
         #endregion
 
@@ -90,20 +106,41 @@ namespace PixelCrushers
 
         private void OnEnable()
         {
+            m_needToUpdateSO = true;
+            m_needToApplyBeforeUpdateSO = false;
+            m_lastApply = System.DateTime.Now;
             s_instance = this;
             titleContent.text = "Text Table";
             m_needRefreshLists = true;
             Undo.undoRedoPerformed += Repaint;
             if (m_textTableInstanceID != 0) Selection.activeObject = EditorUtility.InstanceIDToObject(m_textTableInstanceID);
             m_toolbarSelection = EditorPrefs.GetInt(ToolbarSelectionPrefsKey, 0);
+            if (EditorPrefs.HasKey(SearchBarPrefsKey))
+            {
+                var searchBarSettings = JsonUtility.FromJson<SearchBarSettings>(EditorPrefs.GetString(SearchBarPrefsKey));
+                if (searchBarSettings != null)
+                {
+                    m_isSearchPanelOpen = searchBarSettings.open;
+                    m_searchString = searchBarSettings.searchString;
+                    m_replaceString = searchBarSettings.replaceString;
+                    m_matchCase = searchBarSettings.matchCase;
+                }
+            }
             OnSelectionChange();
         }
 
         private void OnDisable()
         {
+            if (m_serializedObject != null) m_serializedObject.ApplyModifiedProperties();
             s_instance = null;
             Undo.undoRedoPerformed -= Repaint;
             EditorPrefs.SetInt(ToolbarSelectionPrefsKey, m_toolbarSelection);
+            var searchBarSettings = new SearchBarSettings();
+            searchBarSettings.open = m_isSearchPanelOpen;
+            searchBarSettings.searchString = m_searchString;
+            searchBarSettings.replaceString = m_replaceString;
+            searchBarSettings.matchCase = m_matchCase;
+            EditorPrefs.SetString(SearchBarPrefsKey, JsonUtility.ToJson(searchBarSettings));
         }
 
         private void OnSelectionChange()
@@ -126,6 +163,8 @@ namespace PixelCrushers
             ResetLanguagesTab();
             ResetFieldsTab();
             m_needRefreshLists = true;
+            m_needToUpdateSO = true;
+            m_needToApplyBeforeUpdateSO = false;
             m_serializedObject = (newTable != null) ? new SerializedObject(newTable) : null;
             if (m_textTable != null && m_textTable.languages.Count == 0) m_textTable.AddLanguage("Default");
             m_textTableInstanceID = (newTable != null) ? newTable.GetInstanceID() : 0;
@@ -133,6 +172,16 @@ namespace PixelCrushers
 
         private void OnGUI()
         {
+            if (Event.current.commandName == "ObjectSelectorClosed" || Event.current.commandName == "ObjectSelectorUpdated")
+            { 
+                if (m_isPickingOtherTextTable)
+                { 
+                    m_isPickingOtherTextTable = false;
+                    AskConfirmImportOtherTextTable(EditorGUIUtility.GetObjectPickerObject() as TextTable);
+                }
+                return;
+            }
+
             DrawWindowContents();
             if (m_needRefreshLists) Repaint();
         }
@@ -141,7 +190,18 @@ namespace PixelCrushers
         {
             DrawTextTableField();
             if (m_textTable == null || m_serializedObject == null) return;
-            m_serializedObject.Update();
+            var now = System.DateTime.Now;
+            var elapsed = (now - m_lastApply).TotalSeconds;
+            if (m_needToUpdateSO)
+            {
+                if (m_needToApplyBeforeUpdateSO)
+                {
+                    m_serializedObject.ApplyModifiedProperties();
+                    m_needToApplyBeforeUpdateSO = false;
+                }
+                m_needToUpdateSO = false;
+                m_serializedObject.Update();
+            }
             var newToolbarSelection = GUILayout.Toolbar(m_toolbarSelection, ToolbarLabels);
             if (newToolbarSelection != m_toolbarSelection)
             {
@@ -156,7 +216,13 @@ namespace PixelCrushers
             {
                 DrawFieldsTab();
             }
-            m_serializedObject.ApplyModifiedProperties();
+            if (GUI.changed) m_needToApplyBeforeUpdateSO = true;
+            if (elapsed > TimeBetweenUpdates)
+            {
+                m_lastApply = now;
+                m_serializedObject.ApplyModifiedProperties();
+                m_needToApplyBeforeUpdateSO = false;
+            }
         }
 
         private void DrawTextTableField()
@@ -282,14 +348,15 @@ namespace PixelCrushers
         private void DrawFieldsTab()
         {
             DrawGrid();
+            DrawEntryBox();
             if (m_isSearchPanelOpen)
             {
                 DrawSearchPanel();
             }
-            else
-            {
-                DrawEntryBox();
-            }
+            //else
+            //{
+            //    DrawEntryBox();
+            //}
         }
 
         private const float MinColumnWidth = 100;
@@ -317,8 +384,8 @@ namespace PixelCrushers
             if (m_textTable == null) return;
             try
             {
-                var entryBoxHeight = IsAnyFieldSelected() ? (6 * EditorGUIUtility.singleLineHeight) 
-                    : m_isSearchPanelOpen ? (5 * EditorGUIUtility.singleLineHeight) :  0;
+                var entryBoxHeight = IsAnyFieldSelected() ? (6 * EditorGUIUtility.singleLineHeight) : 0;
+                if (m_isSearchPanelOpen) entryBoxHeight += (4 * EditorGUIUtility.singleLineHeight);
                 GUILayout.BeginArea(new Rect(0, 2 * (EditorGUIUtility.singleLineHeight + 4), position.width,
                     position.height - (2 * (EditorGUIUtility.singleLineHeight + 4) + 4) - entryBoxHeight));
                 m_fieldListScrollPosition = GUILayout.BeginScrollView(m_fieldListScrollPosition, false, false);
@@ -423,13 +490,16 @@ namespace PixelCrushers
             GUI.SetNextControlName(info.nameControl);
             EditorGUI.PropertyField(new Rect(rect.x, rect.y + 1, columnWidth, EditorGUIUtility.singleLineHeight), info.fieldNameProperty, GUIContent.none, false);
 
-            GUI.SetNextControlName(info.valueControl);
-            EditorGUI.PropertyField(new Rect(rect.x + rect.width - columnWidth, rect.y + 1, columnWidth, EditorGUIUtility.singleLineHeight), info.fieldValueProperty, GUIContent.none, false);
-            var focusedControl = GUI.GetNameOfFocusedControl();
-            if (string.Equals(info.nameControl, focusedControl) || string.Equals(info.valueControl, focusedControl))
+            if (info.fieldValueProperty != null)
             {
-                m_selectedFieldListElement = index;
-                m_fieldList.index = index;
+                GUI.SetNextControlName(info.valueControl);
+                EditorGUI.PropertyField(new Rect(rect.x + rect.width - columnWidth, rect.y + 1, columnWidth, EditorGUIUtility.singleLineHeight), info.fieldValueProperty, GUIContent.none, false);
+                var focusedControl = GUI.GetNameOfFocusedControl();
+                if (string.Equals(info.nameControl, focusedControl) || string.Equals(info.valueControl, focusedControl))
+                {
+                    m_selectedFieldListElement = index;
+                    m_fieldList.index = index;
+                }
             }
         }
 
@@ -480,7 +550,9 @@ namespace PixelCrushers
         {
             if (Event.current.type == EventType.MouseDown && Event.current.button == 1) // Right-click
             {
-                var index = (int)((Event.current.mousePosition.y / (EditorGUIUtility.singleLineHeight + 4)) - 1);
+                var scrolledClickPosition = Event.current.mousePosition.y - 16;
+                var elementHeight = (EditorGUIUtility.singleLineHeight + 5);
+                var index = Mathf.FloorToInt(scrolledClickPosition / elementHeight);
                 if (0 <= index && index < m_fieldList.count)
                 {
                     var menu = new GenericMenu();
@@ -495,7 +567,9 @@ namespace PixelCrushers
         {
             int index = (int)data;
             m_serializedObject.ApplyModifiedProperties();
+            Undo.RecordObject(m_textTable, "Insert Field");
             m_textTable.InsertField(index, "Field " + m_textTable.nextFieldID);
+            EditorUtility.SetDirty(m_textTable);
             m_serializedObject.Update();
             RebuildFieldCache();
             Repaint();
@@ -508,7 +582,9 @@ namespace PixelCrushers
             if (EditorUtility.DisplayDialog("Delete Field", "Delete '" + info.fieldNameProperty.stringValue + "'?", "OK", "Cancel"))
             {
                 m_serializedObject.ApplyModifiedProperties();
+                Undo.RecordObject(m_textTable, "Delete Field");
                 m_textTable.RemoveField(info.fieldNameProperty.stringValue);
+                EditorUtility.SetDirty(m_textTable);
                 m_serializedObject.Update();
                 RebuildFieldCache();
                 Repaint();
@@ -524,6 +600,11 @@ namespace PixelCrushers
         {
             if (m_needRefreshLists || !IsAnyFieldSelected()) return;
             var rect = new Rect(2, position.height - 6 * EditorGUIUtility.singleLineHeight, position.width - 4, 6 * EditorGUIUtility.singleLineHeight);
+            if (m_isSearchPanelOpen)
+            {
+                var searchPanelHeight = (4 * EditorGUIUtility.singleLineHeight);
+                rect = new Rect(rect.x, rect.y - searchPanelHeight, rect.width, rect.height);
+            }
             var fieldValuesProperty = m_serializedObject.FindProperty("m_fieldValues");
             var fieldValueProperty = fieldValuesProperty.GetArrayElementAtIndex(m_fieldList.index);
             var keysProperty = fieldValueProperty.FindPropertyRelative("m_keys");
@@ -571,6 +652,7 @@ namespace PixelCrushers
                     menu.AddDisabledItem(new GUIContent("Delete All..."));
                     menu.AddDisabledItem(new GUIContent("Export/CSV..."));
                     menu.AddDisabledItem(new GUIContent("Import/CSV..."));
+                    menu.AddDisabledItem(new GUIContent("Import/Other Text Table..."));
                 }
                 else
                 {
@@ -579,6 +661,7 @@ namespace PixelCrushers
                     menu.AddItem(new GUIContent("Delete All..."), false, DeleteAll);
                     menu.AddItem(new GUIContent("Export/CSV..."), false, ExportCSVDialogs);
                     menu.AddItem(new GUIContent("Import/CSV..."), false, ImportCSVDialogs);
+                    menu.AddItem(new GUIContent("Import/Other Text Table..."), false, ImportOtherTextTable);
                 }
                 menu.AddItem(new GUIContent("Encoding/UTF8"), GetEncodingType() == EncodingType.UTF8, SetEncodingType, EncodingType.UTF8);
                 menu.AddItem(new GUIContent("Encoding/Unicode"), GetEncodingType() == EncodingType.Unicode, SetEncodingType, EncodingType.Unicode);
@@ -605,6 +688,7 @@ namespace PixelCrushers
                     Debug.Log("Deleted everything in " + m_textTable.name, m_textTable);
                     break;
             }
+            EditorUtility.SetDirty(m_textTable);
             m_serializedObject.Update();
             RebuildFieldCache();
             Repaint();
@@ -648,7 +732,7 @@ namespace PixelCrushers
             var searchRect = new Rect(rect.x, rect.y + rect.height - 4 * EditorGUIUtility.singleLineHeight, rect.width, EditorGUIUtility.singleLineHeight);
             var replaceRect = new Rect(rect.x, rect.y + rect.height - 3 * EditorGUIUtility.singleLineHeight, rect.width, EditorGUIUtility.singleLineHeight);
             var buttonRect = new Rect(rect.x, rect.y + rect.height - 2 * EditorGUIUtility.singleLineHeight + 4, rect.width, EditorGUIUtility.singleLineHeight);
-            m_searchString = EditorGUI.TextField(searchRect, "Find", m_searchString);
+            m_searchString = EditorGUI.TextField(searchRect, new GUIContent("Find", "Regular expressions allowed."), m_searchString);
             m_replaceString = EditorGUI.TextField(replaceRect, "Replace With", m_replaceString);
             var buttonWidth = 78f;
             var toggleWidth = 90f;
@@ -916,6 +1000,30 @@ namespace PixelCrushers
             m_serializedObject.Update();
             RebuildFieldCache();
             EditorUtility.SetDirty(m_textTable);
+        }
+
+        #endregion
+
+        #region Import Other Text Table
+
+        private void ImportOtherTextTable()
+        {
+            m_isPickingOtherTextTable = true;
+            EditorGUIUtility.ShowObjectPicker<TextTable>(null, false, "t:TextTable", 0);
+        }
+
+        private void AskConfirmImportOtherTextTable(TextTable other)
+        {
+            if (other == null || m_textTable == null) return;
+            if (!EditorUtility.DisplayDialog("Import Text Table?", "Import the contents of " + other.name + " into this text table? This operation may take some time depending on the sizes of the text tables.", "Import", "Cancel")) return;
+            Undo.RecordObject(m_textTable, "Import");
+            m_textTable.ImportOtherTextTable(other);
+            m_textTable.OnBeforeSerialize();
+            m_serializedObject.Update();
+            RebuildFieldCache();
+            EditorUtility.SetDirty(m_textTable);
+            m_needRefreshLists = true;
+            Repaint();
         }
 
         #endregion

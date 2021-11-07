@@ -189,7 +189,12 @@ namespace PixelCrushers
 
         private static bool AxisDefined(string axisName)
         {
-            SerializedObject serializedObject = new SerializedObject(AssetDatabase.LoadAllAssetsAtPath("ProjectSettings/InputManager.asset")[0]);
+#if USE_NEW_INPUT
+            return true; // Assume InputActions will define axis.
+#else
+            var assets = AssetDatabase.LoadAllAssetsAtPath("ProjectSettings/InputManager.asset");
+            if (assets == null || assets.Length == 0) return true; // Gracefully skip if can't load InputManager.
+            SerializedObject serializedObject = new SerializedObject(assets[0]);
             SerializedProperty axesProperty = serializedObject.FindProperty("m_Axes");
 
             axesProperty.Next(true);
@@ -197,10 +202,13 @@ namespace PixelCrushers
             while (axesProperty.Next(false))
             {
                 SerializedProperty axis = axesProperty.Copy();
-                axis.Next(true);
-                if (axis.stringValue == axisName) return true;
+                if (axis.Next(true))
+                {
+                    if (axis.stringValue == axisName) return true;
+                }
             }
             return false;
+#endif
         }
 
         private static void AddAxis(InputAxis axis)

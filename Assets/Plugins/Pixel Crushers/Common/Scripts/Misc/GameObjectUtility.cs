@@ -33,62 +33,140 @@ namespace PixelCrushers
         }
 
         /// <summary>
-        /// Specifies how deep to recurse in GameObjectHardFind.
+        /// Finds an in-scene GameObject by name even if it's inactive.
         /// </summary>
-        public static int maxHardFindRecursion = 16;
+        /// <param name="goName">Name of the GameObject.</param>
+        /// <param name="checkAllScenes">If true, check all open scenes; otherwise only check active scene.</param>
+        /// <returns>The GameObject.</returns>
+        public static GameObject GameObjectHardFind(string goName, bool checkAllScenes = true)
+        {
+            if (string.IsNullOrEmpty(goName)) return null;
+
+            // Try the normal method to find an active GameObject first:
+            GameObject result = GameObject.Find(goName);
+            if (result != null) return result;
+
+            // Otherwise check all GameObjects, active and inactive:
+            if (checkAllScenes)
+            {
+                for (int i = 0; i < UnityEngine.SceneManagement.SceneManager.sceneCount; i++)
+                {
+                    var rootGameObjects = UnityEngine.SceneManagement.SceneManager.GetSceneAt(i).GetRootGameObjects();
+                    result = GameObjectHardFindRootObjects(goName, string.Empty, rootGameObjects);
+                    if (result != null) return result;
+                }
+                return null;
+            }
+            else
+            {
+                var activeSceneRootGameObjects = UnityEngine.SceneManagement.SceneManager.GetActiveScene().GetRootGameObjects();
+                return GameObjectHardFindRootObjects(goName, string.Empty, activeSceneRootGameObjects);
+            }
+        }
 
         /// <summary>
-        /// Finds an in-scene GameObject even if it's inactive, as long as the inactive
-        /// GameObject is a child of an active GameObject.
+        /// Finds an in-scene GameObject by name and tag even if it's inactive.
         /// </summary>
-        /// <returns>The GameObject.</returns>
-        /// <param name="str">Name of the GameObject.</param>
-        /// <remarks>Based on code by cawas: http://answers.unity3d.com/questions/48252/how-to-find-inactive-gameobject.html</remarks>
-        public static GameObject GameObjectHardFind(string str)
+        /// <param name="goName">GameObject name to search for.</param>
+        /// <param name="tag">Tag to search for.</param>
+        /// <param name="checkAllScenes">If true, check all open scenes; otherwise only check active scene.</param>
+        /// <returns></returns>
+        public static GameObject GameObjectHardFind(string goName, string tag, bool checkAllScenes = true)
         {
-            GameObject result = GameObject.Find(str);
-            if (result != null) return result;
-            var gameObjects = GameObject.FindObjectsOfType(typeof(GameObject)) as GameObject[];
-            for (int i = 0; i < gameObjects.Length; i++)
-            {
-                GameObject root = gameObjects[i];
-                if (root.transform.parent == null)
-                { // means it's a root GO
-                    result = GameObjectHardFind(root, str, 0, 0);
-                    if (result != null) break;
-                }
-            }
-            return result;
-        }
-        public static GameObject GameObjectHardFind(string str, string tag)
-        {
+            // Try the normal method to find active GameObjects with tag first:
             GameObject result = null;
             var gameObjects = GameObject.FindGameObjectsWithTag(tag);
-            for (int i = 0; i < gameObjects.Length; i++)
+            foreach (var go in gameObjects)
             {
-                var parent = gameObjects[i];
-                result = GameObjectHardFind(parent, str, 0, 0);
-                if (result != null) break;
+                if (string.Equals(go.name, goName)) return go;
             }
-            return result;
-        }
-        static private GameObject GameObjectHardFind(GameObject item, string str, int index, int recursionDepth)
-        {
-            if (recursionDepth > maxHardFindRecursion) return null;
-            if (index == 0 && item.name == str) return item;
-            if (index < item.transform.childCount)
+
+            // Otherwise check all GameObjects, active and inactive:
+            if (checkAllScenes)
             {
-                GameObject result = GameObjectHardFind(item.transform.GetChild(index).gameObject, str, 0, recursionDepth + 1);
-                if (result == null)
+                for (int i = 0; i < UnityEngine.SceneManagement.SceneManager.sceneCount; i++)
                 {
-                    return GameObjectHardFind(item, str, ++index, recursionDepth + 1);
+                    var rootGameObjects = UnityEngine.SceneManagement.SceneManager.GetSceneAt(i).GetRootGameObjects();
+                    result = GameObjectHardFindRootObjects(goName, tag, rootGameObjects);
+                    if (result != null) return result;
                 }
-                else
-                {
-                    return result;
-                }
+                return null;
+            }
+            else
+            {
+                var activeSceneRootGameObjects = UnityEngine.SceneManagement.SceneManager.GetActiveScene().GetRootGameObjects();
+                return GameObjectHardFindRootObjects(goName, tag, activeSceneRootGameObjects);
+            }
+        }
+
+        private static GameObject GameObjectHardFindRootObjects(string goName, string tag, GameObject[] rootGameObjects)
+        {
+            if (rootGameObjects == null) return null;
+            for (int i = 0; i < rootGameObjects.Length; i++)
+            {
+                var result = GameObjectSearchHierarchy(rootGameObjects[i].transform, goName, tag);
+                if (result != null) return result;
             }
             return null;
+        }
+
+        private static GameObject GameObjectSearchHierarchy(Transform t, string goName, string tag)
+        {
+            if (t == null) return null;
+            if (string.Equals(t.name, goName) && (string.IsNullOrEmpty(tag) || string.Equals(t.tag, tag))) return t.gameObject;
+            foreach (Transform child in t)
+            {
+                var result = GameObjectSearchHierarchy(child, goName, tag);
+                if (result != null) return result;
+            }
+            return null;
+        }
+
+        /// <summary>
+        /// Finds all objects of a type, including on inactive GameObjects.
+        /// <param name="checkAllScenes">If true, check all open scenes; otherwise only check active scene.</param>
+        /// </summary>
+        public static T[] FindObjectsOfTypeAlsoInactive<T>(bool checkAllScenes = true) where T : Component
+        {
+            var list = new System.Collections.Generic.List<T>();
+
+
+            // Otherwise check all GameObjects, active and inactive:
+            if (checkAllScenes)
+            {
+                for (int i = 0; i < UnityEngine.SceneManagement.SceneManager.sceneCount; i++)
+                {
+                    var rootGameObjects = UnityEngine.SceneManagement.SceneManager.GetSceneAt(i).GetRootGameObjects();
+                    FindObjectsSearchRootObjects<T>(rootGameObjects, list);
+                }
+            }
+            else
+            {
+                var activeSceneRootGameObjects = UnityEngine.SceneManagement.SceneManager.GetActiveScene().GetRootGameObjects();
+                FindObjectsSearchRootObjects<T>(activeSceneRootGameObjects, list);
+            }
+
+            return list.ToArray();
+        }
+
+        private static void FindObjectsSearchRootObjects<T>(GameObject[] rootGameObjects, System.Collections.Generic.List<T> list) where T : Component
+        {
+            if (rootGameObjects == null) return;
+            for (int i = 0; i < rootGameObjects.Length; i++)
+            {
+                FindObjectsSearchHierarchy<T>(rootGameObjects[i].transform, list);
+            }
+        }
+
+        private static void FindObjectsSearchHierarchy<T>(Transform t, System.Collections.Generic.List<T> list) where T : Component
+        {
+            if (t == null) return;
+            var components = t.GetComponents<T>();
+            if (components.Length > 0) list.AddRange(components);
+            foreach (Transform child in t)
+            {
+                FindObjectsSearchHierarchy<T>(child, list);
+            }
         }
 
         /// <summary>

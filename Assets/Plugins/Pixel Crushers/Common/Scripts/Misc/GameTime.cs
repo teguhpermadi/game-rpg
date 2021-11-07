@@ -36,6 +36,17 @@ namespace PixelCrushers
         private static float s_manualDeltaTime = 0;
         private static bool s_manualPaused = false;
 
+#if UNITY_2019_3_OR_NEWER
+        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
+        static void InitStaticVariables()
+        {
+            s_mode = GameTimeMode.UnityStandard;
+            s_manualTime = 0;
+            s_manualDeltaTime = 0;
+            s_manualPaused = false;
+        }
+#endif
+
         public static GameTimeMode mode
         {
             get { return s_mode; }
@@ -71,8 +82,9 @@ namespace PixelCrushers
                 {
                     default:
                     case GameTimeMode.UnityStandard:
-                    case GameTimeMode.Realtime:
                         return Time.deltaTime;
+                    case GameTimeMode.Realtime:
+                        return Time.unscaledDeltaTime;
                     case GameTimeMode.Manual:
                         return s_manualDeltaTime;
                 }
@@ -109,7 +121,7 @@ namespace PixelCrushers
                 {
                     default:
                     case GameTimeMode.UnityStandard:
-                        Time.timeScale = value ? 1 : 0;
+                        Time.timeScale = value ? 0 : 1;
                         break;
                     case GameTimeMode.Realtime:
                         break;

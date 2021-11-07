@@ -39,8 +39,18 @@ namespace PixelCrushers
         [Tooltip("Normally the panel considers itself open at start if the GameObject starts active (GameObjectState). To explicitly specify whether the panel should start open or closed, select Open or Closed from the dropdown.")]
         public StartState startState = StartState.GameObjectState;
 
+        [Tooltip("Deactivate panel GameObject when panel is closed.")]
+        [SerializeField]
+        protected bool m_deactivateOnHidden = true;
+        public bool deactivateOnHidden
+        {
+            get { return m_deactivateOnHidden; }
+            set { m_deactivateOnHidden = value; }
+        }
+
         public UnityEvent onOpen = new UnityEvent();
-        public UnityEvent onClose = new UnityEvent();
+        public UnityEvent onClose = new UnityEvent(); // Called when close starts.
+        public UnityEvent onClosed = new UnityEvent(); // Called when close ends.
         public UnityEvent onBackButtonDown = new UnityEvent();
 
         protected GameObject m_previousSelected = null;
@@ -71,6 +81,8 @@ namespace PixelCrushers
             get { return m_panelState; }
             set { m_panelState = value; }
         }
+
+        public virtual bool waitForShowAnimation { get { return false; } }
 
         public bool isOpen
         {
@@ -154,6 +166,16 @@ namespace PixelCrushers
             panelStack.Remove(this);
         }
 
+        /// <summary>
+        /// Move this panel to the top of the stack.
+        /// </summary>
+        public void TakeFocus()
+        {
+            PushToPanelStack();
+            RefreshSelectablesList();
+            CheckFocus();
+        }
+
         protected virtual void OnEnable()
         {
             PushToPanelStack();
@@ -176,7 +198,7 @@ namespace PixelCrushers
             panelState = PanelState.Opening;
             gameObject.SetActive(true);
             onOpen.Invoke();
-            animatorMonitor.SetTrigger(showAnimationTrigger, OnVisible, false);
+            animatorMonitor.SetTrigger(showAnimationTrigger, OnVisible, waitForShowAnimation);
 
             // With quick panel changes, panel may not reach OnEnable/OnDisable before being reused.
             // Update panelStack here also to handle this case:
@@ -186,7 +208,7 @@ namespace PixelCrushers
         public virtual void Close()
         {
             PopFromPanelStack();
-            CancelInvoke();
+            if (gameObject.activeInHierarchy) CancelInvoke();
             if (panelState == PanelState.Closed || panelState == PanelState.Closing) return;
             panelState = PanelState.Closing;
             onClose.Invoke();
@@ -199,12 +221,12 @@ namespace PixelCrushers
             }
         }
 
-        public void SetOpen(bool value)
+        public virtual void SetOpen(bool value)
         {
             if (value == true) Open(); else Close();
         }
 
-        public void Toggle()
+        public virtual void Toggle()
         {
             if (isOpen) Close(); else Open();
         }
@@ -226,7 +248,8 @@ namespace PixelCrushers
         protected virtual void OnHidden()
         {
             panelState = PanelState.Closed;
-            gameObject.SetActive(false);
+            if (deactivateOnHidden) gameObject.SetActive(false);
+            onClosed.Invoke();
         }
 
         protected virtual void Update()
@@ -252,7 +275,7 @@ namespace PixelCrushers
             }
         }
 
-        public void CheckFocus()
+        public virtual void CheckFocus()
         {
             if (!monitorSelection) return;
             if (!InputDeviceManager.autoFocus) return;

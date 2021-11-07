@@ -21,6 +21,18 @@ namespace PixelCrushers
         [SerializeField]
         private TextTable m_textTable = null;
 
+        [Tooltip("When starting, set current language to value saved in PlayerPrefs.")]
+        [SerializeField]
+        private bool m_saveLanguageInPlayerPrefs = true;
+
+        [Tooltip("When updating UIs, perform longer search that also finds LocalizeUI components on inactive GameObjects.")]
+        [SerializeField]
+        private bool m_alsoUpdateInactiveLocalizeUI = true;
+
+        [Tooltip("If a language's field value is blank, use default language's field value.")]
+        [SerializeField]
+        private bool m_useDefaultLanguageForBlankTranslations = true;
+
         private string m_currentLanguage = string.Empty;
 
         private static UILocalizationManager m_instance = null;
@@ -36,7 +48,7 @@ namespace PixelCrushers
                 if (m_instance == null)
                 {
                     m_instance = FindObjectOfType<UILocalizationManager>();
-                    if (m_instance == null)
+                    if (m_instance == null && Application.isPlaying)
                     {
                         var globalTextTable = FindObjectOfType<GlobalTextTable>();
                         m_instance = (globalTextTable != null) ? globalTextTable.gameObject.AddComponent<UILocalizationManager>()
@@ -85,13 +97,29 @@ namespace PixelCrushers
             set { m_currentLanguagePlayerPrefsKey = value; }
         }
 
+        public bool saveLanguageInPlayerPrefs
+        {
+            get { return m_saveLanguageInPlayerPrefs; }
+            set { m_saveLanguageInPlayerPrefs = value; }
+        }
+
+        public bool useDefaultLanguageForBlankTranslations
+        {
+            get { return m_useDefaultLanguageForBlankTranslations; }
+            set { m_useDefaultLanguageForBlankTranslations = value; TextTable.useDefaultLanguageForBlankTranslations = value; }
+        }
+
         private void Awake()
         {
-            m_instance = this;
-            if (!string.IsNullOrEmpty(currentLanguagePlayerPrefsKey) && PlayerPrefs.HasKey(currentLanguagePlayerPrefsKey))
+            if (m_instance == null) m_instance = this;
+            if (saveLanguageInPlayerPrefs)
             {
-                m_currentLanguage = PlayerPrefs.GetString(currentLanguagePlayerPrefsKey);
+                if (!string.IsNullOrEmpty(currentLanguagePlayerPrefsKey) && PlayerPrefs.HasKey(currentLanguagePlayerPrefsKey))
+                {
+                    m_currentLanguage = PlayerPrefs.GetString(currentLanguagePlayerPrefsKey);
+                }
             }
+            TextTable.useDefaultLanguageForBlankTranslations = m_useDefaultLanguageForBlankTranslations;
         }
 
         private IEnumerator Start()
@@ -107,11 +135,17 @@ namespace PixelCrushers
         public void UpdateUIs(string language)
         {
             m_currentLanguage = language;
-            if (!string.IsNullOrEmpty(currentLanguagePlayerPrefsKey))
+            if (saveLanguageInPlayerPrefs)
             {
-                PlayerPrefs.SetString(currentLanguagePlayerPrefsKey, language);
+                if (!string.IsNullOrEmpty(currentLanguagePlayerPrefsKey))
+                {
+                    PlayerPrefs.SetString(currentLanguagePlayerPrefsKey, language);
+                }
             }
-            var localizeUIs = FindObjectsOfType<LocalizeUI>();
+
+            var localizeUIs = m_alsoUpdateInactiveLocalizeUI
+                ? GameObjectUtility.FindObjectsOfTypeAlsoInactive<LocalizeUI>()
+                : FindObjectsOfType<LocalizeUI>();
             for (int i = 0; i < localizeUIs.Length; i++)
             {
                 localizeUIs[i].UpdateText();

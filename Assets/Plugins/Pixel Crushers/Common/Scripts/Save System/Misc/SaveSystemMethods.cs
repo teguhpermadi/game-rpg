@@ -44,6 +44,14 @@ namespace PixelCrushers
         }
 
         /// <summary>
+        /// Resets all saved game data.
+        /// </summary>
+        public void ResetGameState()
+        {
+            SaveSystem.ResetGameState();
+        }
+
+        /// <summary>
         /// Resets all saved game data and restarts the game at the specified scene.
         /// </summary>
         /// <param name="startingSceneName">Scene to restart at.</param>
@@ -91,6 +99,24 @@ namespace PixelCrushers
         public void ApplySavedGameData()
         {
             SaveSystem.ApplySavedGameData();
+        }
+
+        /// <summary>
+        /// Additively loads another scene.
+        /// </summary>
+        /// <param name="sceneName">Scene to additively load.</param>
+        public void LoadAdditiveScene(string sceneName)
+        {
+            SaveSystem.LoadAdditiveScene(sceneName);
+        }
+
+        /// <summary>
+        /// Unloads a previously additively-loaded scene.
+        /// </summary>
+        /// <param name="sceneName">Scene to unload</param>
+        public void UnloadAdditiveScene(string sceneName)
+        {
+            SaveSystem.UnloadAdditiveScene(sceneName);
         }
 
     }
