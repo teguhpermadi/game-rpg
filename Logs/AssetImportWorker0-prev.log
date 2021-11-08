@@ -1,6 +1,6 @@
 Using pre-set license
 Built from '2020.3/staging' branch; Version is '2020.3.20f1 (41c4e627c95f) revision 4310246'; Using compiler version '192528614'; Build Type 'Release'
-OS: 'Windows 10 Pro; OS build 19042.1288; Version 2009; 64bit' Language: 'en' Physical Memory: 8083 MB
+OS: 'Windows 10 Home Single Language; OS build 19043.1288; Version 2009; 64bit' Language: 'en' Physical Memory: 3918 MB
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
 
 COMMAND LINE ARGUMENTS:
@@ -11,113 +11,113 @@ C:\Program Files\Unity\Hub\Editor\2020.3.20f1\Editor\Unity.exe
 -name
 AssetImportWorker0
 -projectPath
-C:/Users/UTAMA/game rpg
+C:/Users/ASUS-A407M/Documents/GitHub/game-rpg
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-56543
-Successfully changed project path to: C:/Users/UTAMA/game rpg
-C:/Users/UTAMA/game rpg
+59755
+Successfully changed project path to: C:/Users/ASUS-A407M/Documents/GitHub/game-rpg
+C:/Users/ASUS-A407M/Documents/GitHub/game-rpg
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 169.86 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 270.49 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.3.20f1 (41c4e627c95f)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.20f1/Editor/Data/Resources/UnitySubsystems
-[Subsystems] Discovering subsystems at path C:/Users/UTAMA/game rpg/Assets
+[Subsystems] Discovering subsystems at path C:/Users/ASUS-A407M/Documents/GitHub/game-rpg/Assets
 GfxDevice: creating device client; threaded=0
 Direct3D:
     Version:  Direct3D 11.0 [level 11.1]
-    Renderer: Intel(R) HD Graphics 630 (ID=0x5912)
+    Renderer: Intel(R) UHD Graphics 600 (ID=0x3185)
     Vendor:   
-    VRAM:     4041 MB
+    VRAM:     1959 MB
     Driver:   27.20.100.8681
 Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.20f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.20f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.20f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56784
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56276
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.20f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.002136 seconds.
+Registered in 0.007464 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 138.91 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 300.99 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.794 seconds
+- Completed reload, in  6.973 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1794ms)
-		BeginReloadAssembly (113ms)
+	ReloadAssembly (6974ms)
+		BeginReloadAssembly (129ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (679ms)
-			LoadAssemblies (106ms)
+			CreateAndSetChildDomain (2ms)
+		EndReloadAssembly (1185ms)
+			LoadAssemblies (123ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (219ms)
+			SetupTypeCache (356ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (41ms)
-			SetupLoadedEditorAssemblies (318ms)
+			RebuildScriptCaches (80ms)
+			SetupLoadedEditorAssemblies (604ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (9ms)
-				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (139ms)
-				BeforeProcessingInitializeOnLoad (13ms)
-				ProcessInitializeOnLoadAttributes (116ms)
-				ProcessInitializeOnLoadMethodAttributes (41ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (301ms)
+				BeforeProcessingInitializeOnLoad (30ms)
+				ProcessInitializeOnLoadAttributes (198ms)
+				ProcessInitializeOnLoadMethodAttributes (64ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.006177 seconds.
+Registered in 0.026146 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 144.14 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 295.32 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.897 seconds
+- Completed reload, in  3.204 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1898ms)
-		BeginReloadAssembly (231ms)
+	ReloadAssembly (3206ms)
+		BeginReloadAssembly (320ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (10ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (23ms)
-		EndReloadAssembly (1555ms)
-			LoadAssemblies (160ms)
+			CreateAndSetChildDomain (39ms)
+		EndReloadAssembly (2734ms)
+			LoadAssemblies (283ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (487ms)
-			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (117ms)
-			SetupLoadedEditorAssemblies (636ms)
+			SetupTypeCache (786ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (216ms)
+			SetupLoadedEditorAssemblies (1148ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (4ms)
-				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (144ms)
-				BeforeProcessingInitializeOnLoad (100ms)
-				ProcessInitializeOnLoadAttributes (364ms)
-				ProcessInitializeOnLoadMethodAttributes (9ms)
-				AfterProcessingInitializeOnLoad (13ms)
-				EditorAssembliesLoaded (0ms)
+				InitializePlatformSupportModulesInManaged (10ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (295ms)
+				BeforeProcessingInitializeOnLoad (192ms)
+				ProcessInitializeOnLoadAttributes (614ms)
+				ProcessInitializeOnLoadMethodAttributes (18ms)
+				AfterProcessingInitializeOnLoad (17ms)
+				EditorAssembliesLoaded (1ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (11ms)
+			AwakeInstancesAfterBackupRestoration (14ms)
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
 Launched and connected shader compiler UnityShaderCompiler.exe after 0.11 seconds
-Refreshing native plugins compatible for Editor in 1.00 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 2.52 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3377 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 144.1 MB.
-System memory in use after: 144.3 MB.
+Unloading 3403 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 145.8 MB.
+System memory in use after: 146.0 MB.
 
-Unloading 27 unused Assets to reduce memory usage. Loaded Objects now: 3827.
-Total: 7.481600 ms (FindLiveObjects: 0.376300 ms CreateObjectMapping: 0.207100 ms MarkObjects: 6.796100 ms  DeleteObjects: 0.100300 ms)
+Unloading 27 unused Assets to reduce memory usage. Loaded Objects now: 3860.
+Total: 9.563500 ms (FindLiveObjects: 1.035500 ms CreateObjectMapping: 0.249200 ms MarkObjects: 7.952000 ms  DeleteObjects: 0.324200 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
@@ -131,657 +131,25 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  path: Assets/New Terrain 3.asset
-  artifactKey: Guid(f8b106dd57ab47f459c137f4c4b388ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/New Terrain 3.asset using Guid(f8b106dd57ab47f459c137f4c4b388ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ca9adc0a68b3187f022a94521a8aa2df') in 0.074481 seconds 
-  Import took 0.087887 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000199 seconds.
-  path: Assets/New Terrain.asset
-  artifactKey: Guid(5906e02715f68274c9b84c42d45566bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/New Terrain.asset using Guid(5906e02715f68274c9b84c42d45566bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c5111722edcf18ea416d2d379232460b') in 0.023303 seconds 
-  Import took 0.034013 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000187 seconds.
-  path: Assets/New Terrain 1.asset
-  artifactKey: Guid(ef549de3d99ad1c48beb4acf7c1f85c6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/New Terrain 1.asset using Guid(ef549de3d99ad1c48beb4acf7c1f85c6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e0e125f2fc8f91df09ae2f79591d17c7') in 0.029208 seconds 
-  Import took 0.036226 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000193 seconds.
-  path: Assets/New Terrain 2.asset
-  artifactKey: Guid(7d010417472e93b41aa8aac816a37bd5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/New Terrain 2.asset using Guid(7d010417472e93b41aa8aac816a37bd5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5ec076ad92f9f0fe7d853754f4ccc691') in 0.025616 seconds 
-  Import took 0.032871 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 71.198099 seconds.
-  path: Assets/myProject/Scenes/uji coba.unity
-  artifactKey: Guid(55b1c6197d16f0142834d7dee799878d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/myProject/Scenes/uji coba.unity using Guid(55b1c6197d16f0142834d7dee799878d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b5aed07c5cda070a2b93eecfbb118bbc') in 0.007293 seconds 
-  Import took 0.013610 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 13.554247 seconds.
-  path: Assets/myProject/Quest and Dialogue/Dialog Player and NPC (Auto-Backup).asset
-  artifactKey: Guid(d45911cccf91fbd49b2747750e1fd5ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/myProject/Quest and Dialogue/Dialog Player and NPC (Auto-Backup).asset using Guid(d45911cccf91fbd49b2747750e1fd5ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4aead70d88875d125612b853e58dd6ad') in 0.020743 seconds 
-  Import took 0.027107 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000228 seconds.
-  path: Assets/myProject/Quest and Dialogue/New Dialogue Database.asset
-  artifactKey: Guid(1265f98a2d73a2d42af35341d300fbbe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/myProject/Quest and Dialogue/New Dialogue Database.asset using Guid(1265f98a2d73a2d42af35341d300fbbe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f604e05452bd51fdbfc72f8df86c8eb6') in 0.023188 seconds 
-  Import took 0.032643 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000229 seconds.
-  path: Assets/myProject/Quest and Dialogue/Dialog Player and NPC.asset
-  artifactKey: Guid(226bc4af88c0b3f47aa998cca2ed5e98) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/myProject/Quest and Dialogue/Dialog Player and NPC.asset using Guid(226bc4af88c0b3f47aa998cca2ed5e98) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2890c8291bcebb115a9ead9714b0b0c7') in 0.017396 seconds 
-  Import took 0.027264 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000104 seconds.
-  path: Assets/myProject/Quest and Dialogue/New Quest Database.asset
-  artifactKey: Guid(5622889963da397479039fdfb2f68f13) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/myProject/Quest and Dialogue/New Quest Database.asset using Guid(5622889963da397479039fdfb2f68f13) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5b9d06bdfa4ca3e7841be4782552b387') in 0.041851 seconds 
-  Import took 0.050724 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 587.565044 seconds.
-  path: Assets/myProject/Quest and Dialogue/Dialog Player and NPC.asset
-  artifactKey: Guid(226bc4af88c0b3f47aa998cca2ed5e98) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/myProject/Quest and Dialogue/Dialog Player and NPC.asset using Guid(226bc4af88c0b3f47aa998cca2ed5e98) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4f904a75d92da2776ba9e9bcd2de0e71') in 0.006217 seconds 
-  Import took 0.019099 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 2560.022175 seconds.
-  path: Assets/myProject/Quest and Dialogue/Dialog Player and NPC.asset
-  artifactKey: Guid(226bc4af88c0b3f47aa998cca2ed5e98) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/myProject/Quest and Dialogue/Dialog Player and NPC.asset using Guid(226bc4af88c0b3f47aa998cca2ed5e98) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '617039a21e8ab5597c75564f988158e7') in 0.009843 seconds 
-  Import took 0.021435 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 680.949398 seconds.
-  path: Assets/myProject/Quest and Dialogue/Dialog Player and NPC.asset
-  artifactKey: Guid(226bc4af88c0b3f47aa998cca2ed5e98) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/myProject/Quest and Dialogue/Dialog Player and NPC.asset using Guid(226bc4af88c0b3f47aa998cca2ed5e98) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '93ecf6fc836582b93636f6672df60f45') in 0.007046 seconds 
-  Import took 0.019146 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 4559.130452 seconds.
-  path: Assets/myProject/Quest and Dialogue/Dialog Player and NPC.asset
-  artifactKey: Guid(226bc4af88c0b3f47aa998cca2ed5e98) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/myProject/Quest and Dialogue/Dialog Player and NPC.asset using Guid(226bc4af88c0b3f47aa998cca2ed5e98) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a9192048725b72266ae2e4c8db2d9e00') in 0.011817 seconds 
-  Import took 0.022231 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 1101.933694 seconds.
-  path: Assets/myProject/Quest and Dialogue/Dialog Player and NPC.asset
-  artifactKey: Guid(226bc4af88c0b3f47aa998cca2ed5e98) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/myProject/Quest and Dialogue/Dialog Player and NPC.asset using Guid(226bc4af88c0b3f47aa998cca2ed5e98) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '94709b363fe8b822b2385ca289caac2d') in 0.011708 seconds 
-  Import took 0.020508 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 31.213032 seconds.
-  path: Assets/myProject/Quest and Dialogue/Quest
-  artifactKey: Guid(7a2ab0f83fe15e049b040f99d7950bbf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/myProject/Quest and Dialogue/Quest using Guid(7a2ab0f83fe15e049b040f99d7950bbf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f45b708180c2827386ea325e6249038a') in 0.010606 seconds 
-  Import took 0.016730 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 2.329104 seconds.
-  path: Assets/myProject/Quest and Dialogue/Quest/getCPU.asset
-  artifactKey: Guid(2ef3786fe6dafe9449ad851356a88915) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/myProject/Quest and Dialogue/Quest/getCPU.asset using Guid(2ef3786fe6dafe9449ad851356a88915) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '393e1b11c0e4c2cd84f8bf88861c6cdb') in 0.014771 seconds 
-  Import took 0.022366 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 7.240031 seconds.
-  path: Assets/myProject/Quest and Dialogue/Quest/ambilCpu.asset
-  artifactKey: Guid(2ef3786fe6dafe9449ad851356a88915) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/myProject/Quest and Dialogue/Quest/ambilCpu.asset using Guid(2ef3786fe6dafe9449ad851356a88915) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd15d53ed1ef8829f9dcae925c735aaca') in 0.009346 seconds 
-  Import took 0.016798 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 16.202832 seconds.
-  path: Assets/myProject/Quest and Dialogue/Quest/New Quest.asset
-  artifactKey: Guid(f9b98493ca754cb4781afab1ab2b042d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/myProject/Quest and Dialogue/Quest/New Quest.asset using Guid(f9b98493ca754cb4781afab1ab2b042d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c4004196ea6674dc9a06253289271b91') in 0.013509 seconds 
-  Import took 0.020952 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 7.625265 seconds.
-  path: Assets/myProject/Quest and Dialogue/Quest/AmbilMonitor.asset
-  artifactKey: Guid(f9b98493ca754cb4781afab1ab2b042d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/myProject/Quest and Dialogue/Quest/AmbilMonitor.asset using Guid(f9b98493ca754cb4781afab1ab2b042d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd24ea3c5a1f9af29facd2b35087c6466') in 0.012426 seconds 
-  Import took 0.019185 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 2.423192 seconds.
-  path: Assets/myProject/Quest and Dialogue/Quest/AmbilCpu.asset
-  artifactKey: Guid(2ef3786fe6dafe9449ad851356a88915) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/myProject/Quest and Dialogue/Quest/AmbilCpu.asset using Guid(2ef3786fe6dafe9449ad851356a88915) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '01e706ab26a7021f31b7471045836343') in 0.011080 seconds 
-  Import took 0.018689 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 53.752078 seconds.
-  path: Assets/myProject/Quest and Dialogue/Quest/New Quest.asset
-  artifactKey: Guid(844d7ece41705284ab8b6400c28a5a30) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/myProject/Quest and Dialogue/Quest/New Quest.asset using Guid(844d7ece41705284ab8b6400c28a5a30) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ea47a334f2d1a5d4efb7b95c941ff2b1') in 0.005858 seconds 
-  Import took 0.017062 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 9.149047 seconds.
-  path: Assets/myProject/Quest and Dialogue/Quest/AmbilKeybaord.asset
-  artifactKey: Guid(844d7ece41705284ab8b6400c28a5a30) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/myProject/Quest and Dialogue/Quest/AmbilKeybaord.asset using Guid(844d7ece41705284ab8b6400c28a5a30) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e62016936843709a8f88399e35e5287c') in 0.010223 seconds 
-  Import took 0.018031 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 20.347153 seconds.
-  path: Assets/myProject/Quest and Dialogue/Quest/New Quest.asset
-  artifactKey: Guid(d27df9c1a0fbc6c40ad87040101779bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/myProject/Quest and Dialogue/Quest/New Quest.asset using Guid(d27df9c1a0fbc6c40ad87040101779bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '92d286848aca1eded3ffa1ae54d1b886') in 0.005019 seconds 
-  Import took 0.014627 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 28.281278 seconds.
-  path: Assets/myProject/Quest and Dialogue/Quest/AmbilMouse.asset
-  artifactKey: Guid(d27df9c1a0fbc6c40ad87040101779bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/myProject/Quest and Dialogue/Quest/AmbilMouse.asset using Guid(d27df9c1a0fbc6c40ad87040101779bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'af110f9e1b3dc606f1ef33ea9ca89159') in 0.010514 seconds 
-  Import took 0.018439 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 60.779007 seconds.
-  path: Assets/myProject/Quest and Dialogue/Quest/New Quest.asset
-  artifactKey: Guid(592251bb038c2ba468ff94cab71b8f44) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/myProject/Quest and Dialogue/Quest/New Quest.asset using Guid(592251bb038c2ba468ff94cab71b8f44) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1f48d24cb15592c2669ac178c87abfa9') in 0.007533 seconds 
-  Import took 0.017160 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 5.756677 seconds.
-  path: Assets/myProject/Quest and Dialogue/Quest/AmbilHp.asset
-  artifactKey: Guid(592251bb038c2ba468ff94cab71b8f44) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/myProject/Quest and Dialogue/Quest/AmbilHp.asset using Guid(592251bb038c2ba468ff94cab71b8f44) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c13b3b5946c9cd1faff0f55b08b35986') in 0.012134 seconds 
-  Import took 0.018739 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 453.479507 seconds.
-  path: Assets/myProject/Quest and Dialogue/Dialog Player and NPC.asset
-  artifactKey: Guid(226bc4af88c0b3f47aa998cca2ed5e98) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/myProject/Quest and Dialogue/Dialog Player and NPC.asset using Guid(226bc4af88c0b3f47aa998cca2ed5e98) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ffa992e77cdeadd0a5af9c691305b4ec') in 0.016449 seconds 
-  Import took 0.024585 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 413.427976 seconds.
-  path: Assets/myProject/Quest and Dialogue/Dialog Player and NPC.asset
-  artifactKey: Guid(226bc4af88c0b3f47aa998cca2ed5e98) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/myProject/Quest and Dialogue/Dialog Player and NPC.asset using Guid(226bc4af88c0b3f47aa998cca2ed5e98) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '377e90de688fd95a5681bc08f9ae3ec7') in 0.010600 seconds 
-  Import took 0.019025 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 11.596918 seconds.
-  path: Assets/myProject/Quest and Dialogue/Quest/AmbilCpu.asset
-  artifactKey: Guid(2ef3786fe6dafe9449ad851356a88915) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/myProject/Quest and Dialogue/Quest/AmbilCpu.asset using Guid(2ef3786fe6dafe9449ad851356a88915) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '004e796063121fea9789eb3556b3d196') in 0.005291 seconds 
-  Import took 0.011428 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 2.259466 seconds.
   path: Assets/myProject/Quest and Dialogue/Quest/cpu.asset
   artifactKey: Guid(2ef3786fe6dafe9449ad851356a88915) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/myProject/Quest and Dialogue/Quest/cpu.asset using Guid(2ef3786fe6dafe9449ad851356a88915) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e4ca19b842a85f6b66b09fd2c6d96425') in 0.010303 seconds 
-  Import took 0.018753 seconds .
+Start importing Assets/myProject/Quest and Dialogue/Quest/cpu.asset using Guid(2ef3786fe6dafe9449ad851356a88915) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '474f7008a2f9afb42fe1fa61f173ca04') in 0.141310 seconds 
+  Import took 0.154570 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 1.175123 seconds.
-  path: Assets/myProject/Quest and Dialogue/Quest/AmbilHp.asset
-  artifactKey: Guid(592251bb038c2ba468ff94cab71b8f44) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/myProject/Quest and Dialogue/Quest/AmbilHp.asset using Guid(592251bb038c2ba468ff94cab71b8f44) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a463d7b71e064818f13940aac03da144') in 0.005747 seconds 
-  Import took 0.012556 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 1.264404 seconds.
+  Time since last request: 5.816115 seconds.
   path: Assets/myProject/Quest and Dialogue/Quest/hp.asset
   artifactKey: Guid(592251bb038c2ba468ff94cab71b8f44) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/myProject/Quest and Dialogue/Quest/hp.asset using Guid(592251bb038c2ba468ff94cab71b8f44) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ac0fd7d4a1e8297cdbffd7f87a2387f2') in 0.011993 seconds 
-  Import took 0.018948 seconds .
+Start importing Assets/myProject/Quest and Dialogue/Quest/hp.asset using Guid(592251bb038c2ba468ff94cab71b8f44) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '059709dfdf06003e25d20a5708d18e75') in 0.012576 seconds 
+  Import took 0.033093 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.895340 seconds.
-  path: Assets/myProject/Quest and Dialogue/Quest/AmbilKeybaord.asset
-  artifactKey: Guid(844d7ece41705284ab8b6400c28a5a30) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/myProject/Quest and Dialogue/Quest/AmbilKeybaord.asset using Guid(844d7ece41705284ab8b6400c28a5a30) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '94a53437b9b1f11eb1000f98ef1f1c5e') in 0.004858 seconds 
-  Import took 0.011762 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 4.402045 seconds.
-  path: Assets/myProject/Quest and Dialogue/Quest/keyboard.asset
-  artifactKey: Guid(844d7ece41705284ab8b6400c28a5a30) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/myProject/Quest and Dialogue/Quest/keyboard.asset using Guid(844d7ece41705284ab8b6400c28a5a30) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '292fc1d9779d07c75479396eb948358e') in 0.009456 seconds 
-  Import took 0.016909 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.850659 seconds.
-  path: Assets/myProject/Quest and Dialogue/Quest/AmbilMonitor.asset
-  artifactKey: Guid(f9b98493ca754cb4781afab1ab2b042d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/myProject/Quest and Dialogue/Quest/AmbilMonitor.asset using Guid(f9b98493ca754cb4781afab1ab2b042d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8fe924b7e8825b83b4c47ed7784f7998') in 0.005551 seconds 
-  Import took 0.012419 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 1.877488 seconds.
-  path: Assets/myProject/Quest and Dialogue/Quest/monitor.asset
-  artifactKey: Guid(f9b98493ca754cb4781afab1ab2b042d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/myProject/Quest and Dialogue/Quest/monitor.asset using Guid(f9b98493ca754cb4781afab1ab2b042d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ed6efa56d4e150a8de23ff870057692d') in 0.008837 seconds 
-  Import took 0.018407 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.819547 seconds.
-  path: Assets/myProject/Quest and Dialogue/Quest/AmbilMouse.asset
-  artifactKey: Guid(d27df9c1a0fbc6c40ad87040101779bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/myProject/Quest and Dialogue/Quest/AmbilMouse.asset using Guid(d27df9c1a0fbc6c40ad87040101779bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '11cebf3a9b6990fbd65641b23ec9669b') in 0.004920 seconds 
-  Import took 0.011828 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 1.545001 seconds.
-  path: Assets/myProject/Quest and Dialogue/Quest/mouse.asset
-  artifactKey: Guid(d27df9c1a0fbc6c40ad87040101779bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/myProject/Quest and Dialogue/Quest/mouse.asset using Guid(d27df9c1a0fbc6c40ad87040101779bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eef6b1f63bdc8bf90d2f2f5d50332da5') in 0.011118 seconds 
-  Import took 0.019642 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 320.953406 seconds.
-  path: Assets/myProject/Quest and Dialogue/Dialog Player and NPC.asset
-  artifactKey: Guid(226bc4af88c0b3f47aa998cca2ed5e98) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/myProject/Quest and Dialogue/Dialog Player and NPC.asset using Guid(226bc4af88c0b3f47aa998cca2ed5e98) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '576c4d99278b523330ac0d28749c75e7') in 0.010740 seconds 
-  Import took 0.019434 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 305.113428 seconds.
-  path: Assets/Plugins/Pixel Crushers/Dialogue System/Prefabs/Standard UI Prefabs
-  artifactKey: Guid(fe2e3e8266e112e42bece6d296b0d7d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Plugins/Pixel Crushers/Dialogue System/Prefabs/Standard UI Prefabs using Guid(fe2e3e8266e112e42bece6d296b0d7d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0b8bb959f0481a1f05e141f43e4dd5d9') in 0.012230 seconds 
-  Import took 0.019480 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 1.474010 seconds.
-  path: Assets/Plugins/Pixel Crushers/Dialogue System/Prefabs/Standard UI Prefabs/Pro
-  artifactKey: Guid(a3eae203dd3d34546872a7c985604f08) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Plugins/Pixel Crushers/Dialogue System/Prefabs/Standard UI Prefabs/Pro using Guid(a3eae203dd3d34546872a7c985604f08) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c4f58e9588f86a33f98574cae6077349') in 0.010367 seconds 
-  Import took 0.017699 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.006303 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.90 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.322 seconds
-Domain Reload Profiling:
-	ReloadAssembly (1322ms)
-		BeginReloadAssembly (207ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (12ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (80ms)
-		EndReloadAssembly (1042ms)
-			LoadAssemblies (135ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (387ms)
-			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (54ms)
-			SetupLoadedEditorAssemblies (350ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (5ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (62ms)
-				ProcessInitializeOnLoadAttributes (266ms)
-				ProcessInitializeOnLoadMethodAttributes (8ms)
-				AfterProcessingInitializeOnLoad (7ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (7ms)
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 2.23 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3362 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 143.3 MB.
-System memory in use after: 143.6 MB.
-
-Unloading 20 unused Assets to reduce memory usage. Loaded Objects now: 3829.
-Total: 12.695100 ms (FindLiveObjects: 2.159000 ms CreateObjectMapping: 1.504800 ms MarkObjects: 8.859400 ms  DeleteObjects: 0.167800 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Import Request.
-  Time since last request: 224.001967 seconds.
-  path: Assets/myProject/Character/ybot
-  artifactKey: Guid(d2c68630d97afc644957c97267a73c45) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/myProject/Character/ybot using Guid(d2c68630d97afc644957c97267a73c45) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '673b45054bd76e1d2c82e220ba070938') in 0.015377 seconds 
-  Import took 0.023013 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.005663 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.82 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.440 seconds
-Domain Reload Profiling:
-	ReloadAssembly (1441ms)
-		BeginReloadAssembly (129ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (5ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (38ms)
-		EndReloadAssembly (1241ms)
-			LoadAssemblies (119ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (375ms)
-			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (53ms)
-			SetupLoadedEditorAssemblies (544ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (5ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (56ms)
-				ProcessInitializeOnLoadAttributes (446ms)
-				ProcessInitializeOnLoadMethodAttributes (21ms)
-				AfterProcessingInitializeOnLoad (15ms)
-				EditorAssembliesLoaded (1ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (18ms)
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.97 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3362 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 143.4 MB.
-System memory in use after: 143.6 MB.
-
-Unloading 20 unused Assets to reduce memory usage. Loaded Objects now: 3831.
-Total: 4.143700 ms (FindLiveObjects: 0.461500 ms CreateObjectMapping: 0.310700 ms MarkObjects: 3.348600 ms  DeleteObjects: 0.021100 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Import Request.
-  Time since last request: 282.888997 seconds.
-  path: Assets/myProject/Quest and Dialogue/Dialog Player and NPC.asset
-  artifactKey: Guid(226bc4af88c0b3f47aa998cca2ed5e98) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/myProject/Quest and Dialogue/Dialog Player and NPC.asset using Guid(226bc4af88c0b3f47aa998cca2ed5e98) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9cdb6b5597183a6f5520aa81f0633edb') in 0.032428 seconds 
-  Import took 0.038133 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.008783 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.34 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  2.012 seconds
-Domain Reload Profiling:
-	ReloadAssembly (2012ms)
-		BeginReloadAssembly (229ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (8ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (85ms)
-		EndReloadAssembly (1676ms)
-			LoadAssemblies (188ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (603ms)
-			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (89ms)
-			SetupLoadedEditorAssemblies (629ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (7ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (89ms)
-				ProcessInitializeOnLoadAttributes (507ms)
-				ProcessInitializeOnLoadMethodAttributes (13ms)
-				AfterProcessingInitializeOnLoad (10ms)
-				EditorAssembliesLoaded (1ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (12ms)
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 2.80 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3362 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 143.4 MB.
-System memory in use after: 143.7 MB.
-
-Unloading 20 unused Assets to reduce memory usage. Loaded Objects now: 3833.
-Total: 9.590400 ms (FindLiveObjects: 1.002200 ms CreateObjectMapping: 1.220700 ms MarkObjects: 7.334300 ms  DeleteObjects: 0.031100 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Import Request.
-  Time since last request: 755.406102 seconds.
-  path: Assets/Plugins/Pixel Crushers/Dialogue System/Prefabs/Standard UI Prefabs/Pro/Mobile
-  artifactKey: Guid(c52eedf74bf2fd044a0029a5ab7b7603) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Plugins/Pixel Crushers/Dialogue System/Prefabs/Standard UI Prefabs/Pro/Mobile using Guid(c52eedf74bf2fd044a0029a5ab7b7603) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a27ce31ead94dccc84b4b3390174ec3e') in 0.014470 seconds 
-  Import took 0.023857 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 140.777432 seconds.
-  path: Assets/Plugins/Pixel Crushers/Dialogue System/Prefabs/Deprecated/Legacy Unity GUI Prefabs/Computer/Computer Dialogue GUI Skin.guiskin
-  artifactKey: Guid(a2b5d5b41f3b347448a9c7387fbce020) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Plugins/Pixel Crushers/Dialogue System/Prefabs/Deprecated/Legacy Unity GUI Prefabs/Computer/Computer Dialogue GUI Skin.guiskin using Guid(a2b5d5b41f3b347448a9c7387fbce020) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ba0d07d2db91fa972027cf92bd3bd32b') in 0.033247 seconds 
-  Import took 0.040299 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.005532 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.81 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.130 seconds
-Domain Reload Profiling:
-	ReloadAssembly (1130ms)
-		BeginReloadAssembly (130ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (5ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (36ms)
-		EndReloadAssembly (935ms)
-			LoadAssemblies (110ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (336ms)
-			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (50ms)
-			SetupLoadedEditorAssemblies (327ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (4ms)
-				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (55ms)
-				ProcessInitializeOnLoadAttributes (252ms)
-				ProcessInitializeOnLoadMethodAttributes (7ms)
-				AfterProcessingInitializeOnLoad (7ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (7ms)
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.82 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3362 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 143.5 MB.
-System memory in use after: 143.7 MB.
-
-Unloading 20 unused Assets to reduce memory usage. Loaded Objects now: 3835.
-Total: 3.905200 ms (FindLiveObjects: 0.321700 ms CreateObjectMapping: 0.177700 ms MarkObjects: 3.383300 ms  DeleteObjects: 0.020700 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.009474 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.26 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  2.394 seconds
-Domain Reload Profiling:
-	ReloadAssembly (2395ms)
-		BeginReloadAssembly (254ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (10ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (83ms)
-		EndReloadAssembly (2000ms)
-			LoadAssemblies (252ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (731ms)
-			ReleaseScriptCaches (4ms)
-			RebuildScriptCaches (105ms)
-			SetupLoadedEditorAssemblies (701ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (11ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (107ms)
-				ProcessInitializeOnLoadAttributes (553ms)
-				ProcessInitializeOnLoadMethodAttributes (17ms)
-				AfterProcessingInitializeOnLoad (11ms)
-				EditorAssembliesLoaded (1ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (19ms)
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 2.83 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3362 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 143.5 MB.
-System memory in use after: 143.7 MB.
-
-Unloading 20 unused Assets to reduce memory usage. Loaded Objects now: 3837.
-Total: 8.154500 ms (FindLiveObjects: 0.714300 ms CreateObjectMapping: 1.273500 ms MarkObjects: 6.109400 ms  DeleteObjects: 0.052800 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Import Request.
-  Time since last request: 899.449084 seconds.
-  path: Assets/Plugins/Pixel Crushers/Quest Machine/Third Party Support
-  artifactKey: Guid(983b09bfda45d7345a1b1a09bec32cb9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Plugins/Pixel Crushers/Quest Machine/Third Party Support using Guid(983b09bfda45d7345a1b1a09bec32cb9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cf24634b3b3639a7dbd396b77047830f') in 0.016784 seconds 
-  Import took 0.024482 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 1.091965 seconds.
-  path: Assets/Plugins/Pixel Crushers/Quest Machine/Third Party Support/_IMPORTANT_README.txt
-  artifactKey: Guid(65e327d3cb2cd5b42be03dd775f6b555) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Plugins/Pixel Crushers/Quest Machine/Third Party Support/_IMPORTANT_README.txt using Guid(65e327d3cb2cd5b42be03dd775f6b555) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '649e769f20ddade0593f23294cc3d275') in 0.025031 seconds 
-  Import took 0.031793 seconds .
+  Time since last request: 189.789577 seconds.
+  path: Assets/myProject/Quest and Dialogue/Quest/cpu.asset
+  artifactKey: Guid(2ef3786fe6dafe9449ad851356a88915) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/myProject/Quest and Dialogue/Quest/cpu.asset using Guid(2ef3786fe6dafe9449ad851356a88915) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2d78b8367489d72e4014132f245ec2c9') in 0.019737 seconds 
+  Import took 0.039064 seconds .
 
 AssetImportWorkerClient::OnTransportError - code=2 error=End of file
