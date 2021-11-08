@@ -1456,6 +1456,43 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f907b1416ebdbf645a73183ab47aa2b8, type: 3}
+--- !u!1 &74675344 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 109040, guid: f907b1416ebdbf645a73183ab47aa2b8, type: 3}
+  m_PrefabInstance: {fileID: 74675343}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &74675345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 74675344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a9caaffc25c6e64cadfd0e976b5d4c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &74675346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 74675344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 770432b57b2e22a4ea012fc98a4435a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_hideOriginalUIOnConversationStart: 1
+  m_allowOriginalUIDuringConversations: 0
+  m_generateConversationForQuestLists: 1
+  m_cancelQuestListText:
+    m_text: Goodbye.
+    m_stringAsset: {fileID: 0}
+    m_textTable: {fileID: 0}
+    m_textTableFieldID: 0
 --- !u!1 &76503625
 GameObject:
   m_ObjectHideFlags: 0
@@ -7108,6 +7145,37 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 58ac37417e60e534f91138088a3e6f70, type: 3}
+--- !u!1 &719522805 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 125852, guid: 58ac37417e60e534f91138088a3e6f70, type: 3}
+  m_PrefabInstance: {fileID: 719522804}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &719522806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 719522805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c139516016bca084288d1ee836fc024b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_processQuestMachineTags: 1
+  m_overrideQuestLog: 1
+--- !u!114 &719522807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 719522805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c54f930af957f4488bf65838d4ed623, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &733470733
 GameObject:
   m_ObjectHideFlags: 0
