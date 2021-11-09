@@ -1674,7 +1674,7 @@ MonoBehaviour:
         typeString: 
       - title: Dialogue Text
         value: 
-        type: 4
+        type: 0
         typeString: 
       - title: Video File
         value: 
@@ -1705,8 +1705,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 120
-        y: 20
+        x: 121.49254
+        y: 18.507462
         width: 160
         height: 30
     - id: 1
